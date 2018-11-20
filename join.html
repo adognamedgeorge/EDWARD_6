@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size:50px;height:100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>注册云蚂蚁</title>
+    <link rel="stylesheet" type="text/css" href="iconfont.css"/>
+    <script type="text/javascript" src="jquery-1.11.3.js"></script>
+    <style>
+        *{ font-family: "PingFang SC"; color: rgba(77,77,77,1);}
+        header {
+            background-color: #ffffff;
+            font-size: .36rem;
+            text-align: center;
+            line-height: .88rem;
+        }
+        #register_main {
+            padding-bottom: 1rem;
+            min-height: 100%;
+            background: linear-gradient(180deg,rgba(247,116,90,1) 0%,rgba(242,97,89,1) 100%);
+            background: -webkit-linear-gradient(180deg,rgba(247,116,90,1) 0%,rgba(242,97,89,1) 100%);
+        }
+        .register_bg {
+            width: 100%;
+        }
+        .register_img { width: 100%; }
+        .register_signup {
+            background: #ffffff;
+            margin: 2% auto 0 auto;
+            border-radius: .2rem;
+            padding: 4.3% 0 9% 0;
+            width: 89%;
+            position: relative;
+            z-index: 1;
+        }
+        .signup_form {
+            font-size: .28rem;
+            color: rgba(204,204,204,1);
+        }
+        .signup_form > div {
+            width: 91%;
+            height: 1.2rem;
+            margin: 0 auto 5.33%;
+        }
+        .signup_input, .join_content {
+            width: inherit;
+            margin: 0 auto;
+            border: transparent;
+            font-size: .32rem;
+            line-height: .8rem;
+        }
+        .signup_input {
+            display: block;
+            background-color: rgba(247,247,247,1);
+            border-radius: 0.04rem;
+            text-indent: .25rem;
+        }
+        .join_content {
+            position: relative;
+            line-height: .8rem;
+        }
+        .signup_input::-webkit-input-placeholder{
+            color: rgba(204,204,204,1);
+        }
+        .signup_input::-moz-placeholder {
+            color: rgba(204,204,204,1);
+        }
+        .signup_input:-moz-placeholder {
+            color: rgba(204,204,204,1);
+        }
+        .signup_input::-ms-input-placeholder {
+            color: rgba(204,204,204,1);
+        }
+        .signup_phonecode {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: .02rem solid rgba(204,204,204,1);
+            border-radius: .02rem;
+            height: 100%;
+            line-height: .8rem;
+            display: block;
+            color: rgba(204,204,204,1);
+            background-color: #ffffff;
+            -webkit-appearance: none;
+            outline: none;
+        }
+        .phonecode_active {
+            border: .02rem solid #F55D4C;
+            color: red;
+        }
+        
+        .signup_submit {
+            border: 0;
+            font-size: .36rem;
+            color: rgba(255,255,255,1);
+            width: 88%;
+            border-radius: .1rem;
+            line-height: .88rem;
+            background: linear-gradient(270deg,rgba(244,75,75,1) 0%,rgba(245,93,76,1) 100%);
+            box-shadow: 0 0.16rem 0.32rem 0 rgba(247,69,63,0.2);
+            margin: 0 auto;
+            display: block;
+        }
+        .join_p {
+            color: rgba(77,77,77,1);
+            font-size: .32rem;
+            height: .96rem;
+            lin-height: .48rem;
+            text-align: center;
+            width: 100%;
+            display: inline-block;
+            margin-bottom: .5rem;
+        }
+        .join_box {
+            position: relative;
+        }
+        .join_box input:first-child {
+            width: 60%;
+            display: inline-block;
+        }
+        .iconfont {
+            color: #47B360;
+            font-size: 1rem;
+        }
+        .hidden_p, .text_link {
+            color: rgba(128,128,128,1);
+            font-size: .3rem;
+        }
+        .iconfont, .hidden_p {
+            text-align: center;
+            margin-bottom: .3rem;
+        }
+        .download {
+            color: rgba(255,255,255,1);
+            font-size: .36rem;
+            display: block;
+            margin: 0 auto;
+            width: 88%;
+            text-align: center;
+            text-decoration: none;
+        }
+        .signup_hidden {
+            display: none;
+        }
+        .text_link {
+            display: block;
+            margin-top: 15px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        i {
+            color: #6b6bff;
+            font-style: normal;
+            position: relative;
+            -webkit-animation: float 3s ease infinite;
+                    animation: float 3s ease infinite;
+        }
+        @keyframes float {
+            0%, 100% {
+                right: 0;
+            }
+            50% {
+                right: -5%;
+            }
+        }
+        @-webkit-keyframes float {
+            0%, 100% {
+                right: 0;
+            }
+            50% {
+                right: -5%;
+            }
+        }
+
+        body { height: 100%; width: 100%; }
+        body, h1, h2, h3, h4, p {
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            border: none;
+            vertical-align: top;
+        }
+        input, textarea { outline: none; }
+        textarea {
+            resize: none;
+            overflow: auto;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="register_main">
+        <!--背景-->
+        <div class="register_bg">
+            <img class="register_img" src="image_logins.png"/>
+        </div>
+        <!--优势-->
+        <div class="register_signup">
+            <p class="join_p">自买省钱，分享赚钱，<br> 全员团购，惠礼无限。</p>
+            <div class="signup_show">
+                <div class="signup_form">
+                    <div>
+                        <input class="signup_input phone" type="tel" value=""
+                               placeholder="请输入你的手机号"
+                               onkeyup="value=value.replace(/[^\d]/g,'')"
+                               oninput="if(value.length>11)value=value.slice(0,11)" />
+                    </div>
+
+                    <div class="join_box">
+                        <div class="join_content">
+                            <input class="signup_input code" type="text" value="" placeholder="请输入验证码"/>
+                            <input class="signup_phonecode" type="button" value="发送验证码" disabled="disabled"/>
+                        </div>
+                    </div>
+                    <input class="signup_submit" type="submit" value="注册"/>
+                </div>
+            </div>
+            
+            <div class="signup_hidden">
+                <div class="signup_icon iconfont">&#xe60f;</div>
+                <p class="hidden_p">恭喜您注册成功，赶快下载app体验吧</p>
+                <a class="signup_submit download" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.yunmayi.android" target="_blank">立马下载app</a>
+                <a href="http://dd.v2.yunmayi.com/mall/index.html" class="text_link">直接去微信商城购物<i>&#8250;&#8250;&#8250;</i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function(){
+            let ordertime = 60,   //设置再次发送验证码等待时间
+                timeleft = ordertime,
+                btn = $(".signup_phonecode"),
+                phone = $(".phone"),
+                reg = /^1[0-9]{10}$/;
+            //当号码符合规则后发送验证码按钮可点击
+           function key() {
+                if (reg.test(phone.val())){
+                    btn.addClass("phonecode_active").removeAttr("disabled")
+                }
+                else{
+                    btn.removeClass("phonecode_active").attr("disabled",true)
+                }
+            }
+            // input输入触发事件
+            phone.keyup(key);
+            // 兼容keyup输入法事件
+            phone.bind("input propertychange", key);
+            // phone.on("propertychange", key);
+            // window.addEventListener("input", key, false);
+
+            //计时函数
+            function timeCount(){
+                timeleft -= 1;
+                if (timeleft > 0){
+                    btn.val(timeleft + " 秒后重发");
+                    setTimeout(timeCount,1000)
+                }
+                else {
+                    btn.val("重新发送");
+                    timeleft = ordertime;  //重置等待时间
+                    btn.removeAttr("disabled");
+                }
+            }
+            //注册成功函数
+            let show = $('.signup_show'),
+                hidden = $('.signup_hidden'),
+                submit = $('.signup_submit');
+            function login(){
+                show.addClass('signup_hidden');
+                hidden.removeClass('signup_hidden')
+            }
+            function login2(){
+                login();
+                $('.hidden_p').html('您已是我们的会员，赶快下载app体验吧')
+            }
+
+            //获取parentID
+            function GetUrlParam(name)
+            {
+                let reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"),
+                    r = window.location.search.substr(1).match(reg);
+                if(r!= null)
+                    return unescape(r[2]);
+                    return null;
+            }
+            var parentId = GetUrlParam("parentId")
+            console.log(parentId);
+            //事件处理函数
+            btn.on("click",function(){
+                $(this).attr("disabled",true); //防止多次点击
+                    $.ajax({
+                        type: "get",
+                        dataType: "json",
+                        url:"/passport/getSmsVerifyCode",
+                        data:{
+                            mobile:phone.val()
+                        }
+                    });
+                    timeCount(this);
+            });
+            //验证码注册
+            submit.on('click',function(){
+                let vcode = $('.code');
+                if(phone.val() == null || phone.val() == ''){
+                    alert('请输入手机号码')
+                }else if(vcode.val() == null || vcode.val() == ''){
+                    alert('请输入验证码');
+                }else {
+                    $.ajax({
+                        type: "post",
+                        url: "/passport/userExtension",
+                        data:{
+                            mobile: phone.val(),
+                            code: vcode.val(),
+                            parentId: parentId
+                        },
+                        dataType: "json",
+                        success: function (res){
+                            if(res.status === 'success') {
+                                login()
+                            }else {
+                                res.info == '用户名已存在' ? login2(): alert(res.info)
+                            }
+                            console.log(res);
+                        },
+                        error: function (error) {
+                            console.log(error)
+                        }
+                    });
+                }
+            });
+        })
+    </script>
+</body>
+</html>
